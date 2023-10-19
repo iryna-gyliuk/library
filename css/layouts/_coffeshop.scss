@@ -1,0 +1,95 @@
+.coffeeshop__menu{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    
+    & > *{
+        flex-basis: 48%;
+        @include media-tabletlg{
+            flex-basis: 100%;
+        }
+    }
+    @include  media-tabletlg{
+        flex-direction: column;
+    }
+    @include media-tablet{
+        padding-bottom: 40px;
+    }
+}
+.coffeeshop-item__row{
+    display: flex;
+    flex-wrap:nowrap;
+    padding-top: 40px;
+    align-items: center;
+  
+}
+.dash{
+    display: flex;
+    align-self: center;
+    width: 100px;
+    height: 1px;
+    background-color: $color-additional;
+}
+.coffeeshop__product{
+    padding-right: 60px;
+    width: 272px;
+    @include media-mobile{
+        padding-right: 20px;
+    }
+}
+.coffeeshop__price{
+    padding-left: 160px;
+    position: relative;
+    @include font-forum;
+    @include media-mobile{
+        padding-left: 70px;
+    }
+    background-color: $color-light;
+    &::after{
+        content: "";
+        width: 100px;
+        height: 1px;
+        background: $color-additional;
+        position: absolute;
+        left: 0;
+        top:50%;
+        margin-top: -1px;
+        @include media-mobile{
+            width: 50px;
+        }
+    }
+}
+.coffeeshop-item__heading{
+    @include font-forum;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 300;
+    color:$color-additional;
+    margin: 0;
+    letter-spacing: 2px;
+    @include media-mobile{
+
+        font-size: 32px;
+    }
+}
+.coffeeshop-item + .coffeeshop-item{
+    .coffeeshop__product{
+        text-align: right;
+    }
+}
+.coffeeshop-item{
+    &.column-right{
+        text-align: right;
+        .coffeeshop-item__row{
+            justify-content: flex-end;
+        }
+
+    }
+    &.column-left{
+        @include media-tabletlg{
+            flex-basis: 100%;
+            margin-bottom: 40px;
+        }
+
+       
+    }
+}

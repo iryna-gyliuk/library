@@ -1,0 +1,120 @@
+.favorites-item__content{
+    padding-right: 40px;
+    padding-bottom: 61px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include media-mobile{
+        padding-right: 0;
+    }
+}
+.favorites-item {
+    padding-top: 30px;
+    @include media-laptop{
+        flex-basis: 46%;
+    }
+   @include media-tabletlg{
+    flex-basis: 100%;
+   }
+}
+
+.book-block {
+    border: 1px solid $color-dark;
+    max-width: 550px;
+    position: relative;
+    height: 100%;
+    @include media-mobile{
+        height: auto;
+    }
+    @include media-tabletlg{
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    &__heading {
+        display: inline-block;
+        position: relative;
+        margin: 0;
+
+        &:after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            width: 60px;
+            height: 1px;
+            left: 0;
+            background-color: $color-additional;
+
+        }
+    }
+
+    &__image {
+        position: absolute;
+        right: -40px;
+        bottom: -1px;
+        @include media-mobile{
+            position: relative;
+            right: 0;
+            bottom: 0;
+        }
+
+        img {
+            display: block;
+        }
+
+    }
+
+    &__description {
+        padding: 15px 0 15px 20px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        @include media-mobile{
+            padding: 15px 20px;   
+        }
+        .book-btn-block{
+            margin-top: auto;
+        }
+    }
+
+    .book-intro {
+        min-height: 345px;
+        padding-top: 15px;
+        padding-bottom: 11px;
+        padding-right: 175px;
+        @include font-inter;
+        font-size: 15px;
+        line-height: 40px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+        @include media-mobile{
+            padding-right: 0;
+            font-size: 13px;
+            min-height: auto;
+        }
+
+    }
+}
+
+%book-title {
+    @include font-inter;
+    font-size: 15px;
+    line-height: 40px;
+    font-weight: 700;
+    @include media-mobile{
+        font-size: 12px;
+    }
+}
+
+.book-name {
+    @extend %book-title;
+    text-transform: uppercase;
+}
+
+.book-author {
+    @extend %book-title;
+}

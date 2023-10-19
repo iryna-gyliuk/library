@@ -1,0 +1,59 @@
+.welcome {
+    position: relative;
+    color: $color-light;
+
+    &__wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+        z-index: 10;
+        position: relative;
+        background: url(../assets/images/welcome-image.jpg) no-repeat 50% 50%;
+        background-size: cover;
+        min-height: 600px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: -moz-linear-gradient(top, rgba(12, 12, 14, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+            background: -webkit-linear-gradient(top, rgba(12, 12, 14, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+            background: linear-gradient(to bottom, rgba(12, 12, 14, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+            z-index: 5;
+
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        letter-spacing: 3px;
+        padding: 35px 40px;
+        background-color: $color-primary;
+        text-align: center;
+        margin-top: 220px;
+        width: 600px;
+        @include media-tabletsmall{
+            width: 100%;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+        }
+    }
+
+    &__heading {
+        text-transform: uppercase;
+        line-height: 50px;
+        margin: 0;
+        z-index: 10;
+        position: relative;
+
+        span {
+            display: block;
+        }
+    }
+}

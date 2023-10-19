@@ -1,0 +1,89 @@
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    @include font-inter;
+    color: $color-dark;
+    font-size: 2.0rem;
+    font-weight: 400;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+    @include media-mobile{
+        font-size: 1.5rem;
+    }
+    a {
+        text-decoration: none;
+        transition: 0.3s;
+        &:hover, &:visited{
+            text-decoration: none;
+        }
+    }
+    button{
+        transition: 0.3s;
+    }
+
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px ;
+}
+h1, .library__title{
+    @include font-forum;
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0;
+    letter-spacing: 0;
+    @include media-mobile{
+        font-size: 25px;
+    }
+    
+}
+h2{
+    @include font-forum;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 300;
+    @include media-mobile{
+        font-size: 35px;
+    }
+}
+h3{
+    @include font-inter;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 700;  
+    text-transform: none;
+    @include media-mobile{
+        font-size: 15px;
+    }
+}
+h4{
+    @include font-forum;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 300;  
+    @include media-mobile{
+        font-size: 18px;
+    }
+}
+h5{
+    @include font-inter;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 400; 
+    letter-spacing: 0.6px; 
+    @include media-mobile{
+        font-size: 25px;
+    }  
+}
+.hide{
+    display: none;
+}

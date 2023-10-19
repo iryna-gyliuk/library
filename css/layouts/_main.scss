@@ -1,0 +1,91 @@
+.main {
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    padding-bottom: 40px;
+}
+
+.section__title {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 33px;
+}
+
+.section__heading {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+
+    &:after {
+        position: absolute;
+        bottom: -20px;
+        width: 50px;
+        left: calc(50% - 25px);
+        content: "";
+        height: 1px;
+        background-color: $color-primary;
+    }
+}
+
+.section__description {
+    // font-size: 20px;
+    line-height: 40px;
+    @include font-inter;
+    color: $color-dark;
+    text-align: center;
+    letter-spacing: 0;
+    text-transform: none;
+    @include media-mobile{
+        // font-size: 15px;
+    }
+    .coffeeshop &{
+        letter-spacing: 2px;
+    }
+    
+}
+
+.layout-2-column {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+ 
+}
+
+.button {
+    padding: 9px 25px;
+    height: 30px;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid $color-primary;
+    font-weight: 700;
+    @include font-inter;
+    color: $color-primary;
+    background-color: $color-light;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: $color-additional;
+        border-color: $color-additional;
+    }
+    &.disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        background-color: $color-light;
+        color: $color-additional;
+        border-color: $color-additional;
+    }
+}
+
+.btn-primary {
+    font-size: 10px;
+}
+.btn-lg{
+    font-size: 20px;
+    height: 44px;
+    letter-spacing: 3px;
+    @include media-mobile{
+        font-size: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

@@ -1,0 +1,121 @@
+%hamburger-line {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: $color-light;
+    width: 100%;
+    height: 2px;
+}
+
+.hamburger {
+    display: none;
+    position: relative;
+    width: 45px;
+    height: 20px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: 0.5s;
+    @include media-tabletlg {
+        display: inline-block;
+        order: 2;
+    }
+
+    &:before {
+        @extend %hamburger-line;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+    }
+
+    &:after {
+        @extend %hamburger-line;
+        bottom: 0;
+        left: 0;
+        transition: 0.5s;
+    }
+
+    .hamburger__line {
+        @extend %hamburger-line;
+        top: calc(50% - 1px);
+        left: 0;
+    }
+
+    &.open {
+        .hamburger__line {
+            transform: scale(0); 
+        }
+        &:before {
+            transform: translateY(8px) rotate(135deg);
+        }
+
+        &:after {
+            transform: translateY(-10px) rotate(-135deg);
+        }
+    }
+}
+
+
+
+.header__buttons {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.overlay {
+
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        background: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        left: 0;
+        top: 80px;
+        width: 100%;
+        height: 100%;
+        z-index: 15;
+    }
+
+
+}
+
+.top-navigation {
+    transition: all 0.3s ease-out;
+}
+
+.header__navigation {
+    @include media-tabletlg {
+        z-index: 20;
+        position: fixed;
+        top: 80px;
+        right: -332px;
+        width: 332px;
+        height: 100vh;
+        visibility: hidden;
+        background-color: $color-primary;
+        transition: all 0.3s ease-out;
+        transform: translateX(0);
+
+        &.open {
+            display: flex;
+            visibility: visible;
+            transform: translateX(-100%);
+
+
+        }
+    }
+
+}
+
+.navigation {
+    @include media-tabletlg {
+        flex-direction: column;
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 7px;
+    }
+
+}

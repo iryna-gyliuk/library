@@ -1,0 +1,111 @@
+.header {
+    a {
+        color: $color-light;
+    }
+
+}
+.top-navigation {
+    margin-left: auto;
+    display: flex;
+}
+.icon_profile{
+    fill:$color-light;
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 18px;
+    background: $color-primary;
+}
+
+.logo {
+    @include font-forum;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+    @include media-mobile{
+        font-size: 20px;
+    }
+    a{
+        @include media-mobile{
+            background: url(../assets/images/logo.png) no-repeat;
+            background-size: 50px 50px;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            text-indent: -99999px;
+        }  
+    }
+}
+
+.navigation {
+    display: inline-flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .navigation-item {
+        margin-right: 30px;
+        @include media-tabletlg{
+            margin-right: 0;
+        }
+    }
+    .navigation-link {
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 50px;
+        position: relative;
+        @include media-tabletlg{
+            padding: 15px;
+            display: block;
+        }
+
+        &:hover{
+            color: $color-additional;
+        }
+        &:after{
+            content: "";
+            width: 0;
+            height: 3px;
+            background: $color-additional;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+            @include media-tabletlg{
+                display: none;
+            }
+        }
+        &:hover:after{
+            width: 100%;
+        }
+        
+    }
+}
+
+.header_auth {
+    padding-left: 10px;
+    @include media-tabletlg {
+        order: 1;
+        padding-right: 32px;
+    }
+    .user-link {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        border-radius: 50%;
+        vertical-align: middle;
+        &:hover{
+            .icon_profile{
+                fill: $color-additional;
+                transition: 0.3s;
+            }
+        }
+    }
+}
